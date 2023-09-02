@@ -49,14 +49,14 @@ persona[apellido] = "Garcia"
 
 //tambien se usa para darle atributos de 2 palabras o que llevan guion a las cosas
 
-persona ["aria-label"] = "Algo"
+persona["aria-label"] = "Algo"
 
 //error
 const persona = {}; // error, no se puede volver a declarar
 
 //arreglos
 
-const arreglo = [0,2,3];
+const arreglo = [0, 2, 3];
 
 arreglo.push(1); //modifica el arreglo sin cambiar las condiciones o declaracion
 
@@ -65,11 +65,112 @@ const arreglo2 = [...arreglo] //aqui utiliza la funcion spread y mete los datos 
 //METODOS DE ARREGLOS
 
 // forEach
-arreglo.forEach(() =>{
-    
-})
+
+const ejemploEach = arreglo.forEach((elemento, indice) => {
+    return elemento * 2;
+});//retorna undefined porque no tiene return
+
+arreglo2.forEach((elemento, indice) => {
+    console.log(elemento, indice)
+});// asi se usaria
+
 
 //map
-//filter
-//reduce
-//
+//map devuelve un array 
+const ejemploMap = arreglo.map((elemento, indice)) => {
+    return elemento * 2;
+} // [2,4,6,8]
+
+
+//filter: filtra y devuelve los que SI estan dentro del filtro
+const ejemploFilter = arreglo.filter((elemento, indice) => {
+
+    return elemento % 2 === 0;
+
+}); //[2,4]
+
+// find: devuelve el primer elemento que encuentra
+const ejemploFind = arreglo.find((elemento, indice) => {
+    return elemento % 2 === 0;
+})//retorna solo el 2 porque es el primero que encuentra
+
+cons ejemploFindAll = arreglo.findAll((elemento, indice) => {
+    return elemento % 2 === 0;
+
+}) // busca elementos en especifico y los devuelve
+
+
+//reduce: reduce un arreglo a un valor
+
+const ejemploReduce = arreglo.reduce((acumulador, elemento, indice) => {
+    return acumulador + elemento;
+}, 0); //10 
+
+
+// funciones
+function suma(a, b) {
+    return a + b
+}
+
+function holaMundo() {
+    return "Hola mundo"
+}
+
+
+// reemplazo a una clase en JS
+function Perro(nombre, edad){
+    this.nombre = nombre;
+    this.edad = edad;
+
+    this.ladrar = function(){
+        return "Guau";
+    };
+}
+// instanciar la clase
+const perro = new Perro ("Firulais", 5);
+
+
+
+//Arrow functions: tienen un retorno implicito
+//Si no tiene cuerpo "{}", tiene retorno implicito
+//LOS ARROW FUNCTIONS NO TIENEN UN "THIS" PROPIO ni la palabra NEW
+const holaMundoArrow = () => "Hola mundo";
+
+const esMayorDeEdad = (edad) => edad >= 18;
+//como ternario
+
+const esMayorDeEdad2 = (edad) => edad >= 18 ? "Es mayor de edad" : "Es menor de edad";
+
+
+const holaMundoInternacional = (idioma) => {
+    switch (idioma) {
+        case "es":
+            return "Hola mundo"
+        case "en":
+            return "Hello world"
+        case "fr":
+            return "Bonjour le monde"
+        default:
+            return "Hola mundo"
+    }
+};
+
+
+//Crear aplicacion de react
+
+npx create-react-app
+// iniciar el app de react 
+npm run start
+// instalar todos los paquetes necesarios para el proyecto
+npm install
+
+//EXTENSIONES:
+/*Auto close tag
+Auto complete tag
+Auto Rename tag
+DotENV
+ES7+React/Redux/React-native snippets
+prettier
+esLint
+
+*/
