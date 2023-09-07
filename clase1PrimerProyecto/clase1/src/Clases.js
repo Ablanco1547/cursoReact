@@ -12,8 +12,38 @@ export default class Clases extends React.Component {
             edad: 29,
             lista: []
         };
+        this.handleChange = this.handleChange.bind(this);
+        console.log('constructor');
     }
 
+    render() {
+        console.log('render')
+        return (
+            <div>
+                <h1>Hola, mi nombre es {this.state.nombre}</h1>
+                <input type="text" value={this.state.nombre} onChange={(e) => this.handleChange(e)} />
+                <PropsClases apellido={this.state.apellido} />
+                <input type='text' value={this.state.apellido} onChange={(e) => this.handleChangeApellido(e)} />
+            </div>
+        )
+    }
+
+    componentDidMount() {
+        console.log('Did Mount');
+        setTimeout(() => {
+            this.setState({ nombre: 'Juan', apellido: "Mendez" }, () => {
+                console.log(this.state.nombre);
+            })
+        }, 3000);
+    }
+
+    componentDidUpdate() {
+        console.log('Did update');
+    }
+
+    componentWillUnmount() {
+        console.log('will unmount')
+    }
 
     //tambien se puede poner onChange
     handleChange(event) {
@@ -25,15 +55,6 @@ export default class Clases extends React.Component {
 
 
 
-    render() {
-        return (
-            <div>
-                <h1>Hola, mi nombre es {this.state.nombre}</h1>
-                <input type="text" value={this.state.nombre} onChange={(e) => this.handleChange(e)} />
-                <PropsClases apellido={this.state.apellido} />
-                <input type='text' value={this.state.apellido} onChange={(e) => this.handleChangeApellido(e)} />
-            </div>
-        )
-    }
+
 
 }
