@@ -164,6 +164,7 @@ npm run start
 // instalar todos los paquetes necesarios para el proyecto
 npm install
 
+
 //EXTENSIONES:
 /*Auto close tag
 Auto complete tag
@@ -174,3 +175,23 @@ prettier
 esLint
 
 */
+
+
+//ESTADOS Y COSAS
+
+//EXCLUSIVO DE CLASES
+//componentDidMount se usa SOLO despues de la primer renderizacion de la pagina, solo sirve para usarlo despues del primer renderizado de los componentes
+componentDidMount(){
+this.setState(){
+    //EL THIS.SET STATE DEL DIDMOUNT SIEMPRE RECIBE UN OBJETO CON LOS VALORES A CAMBIAR
+}
+}
+
+
+
+//EXCLUSIVO DE FUNCIONES
+//useEffect si se le pasa una funcion sola sirve como didMount
+React.useEffect(()=>{
+    //Como no tiene this.state entonces se pasa cada uno por aparte (cuando se crean los componentes se les pone el nombre de la funcion para que modifique el estado)
+setNombre ("")
+})
