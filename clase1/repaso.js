@@ -118,16 +118,16 @@ function holaMundo() {
 
 
 // reemplazo a una clase en JS
-function Perro(nombre, edad){
+function Perro(nombre, edad) {
     this.nombre = nombre;
     this.edad = edad;
 
-    this.ladrar = function(){
+    this.ladrar = function () {
         return "Guau";
     };
 }
 // instanciar la clase
-const perro = new Perro ("Firulais", 5);
+const perro = new Perro("Firulais", 5);
 
 
 
@@ -158,7 +158,7 @@ const holaMundoInternacional = (idioma) => {
 
 //Crear aplicacion de react
 
-npx create-react-app
+npx create - react - app
 // iniciar el app de react 
 npm run start
 // instalar todos los paquetes necesarios para el proyecto
@@ -182,16 +182,35 @@ esLint
 //EXCLUSIVO DE CLASES
 //componentDidMount se usa SOLO despues de la primer renderizacion de la pagina, solo sirve para usarlo despues del primer renderizado de los componentes
 componentDidMount(){
-this.setState(){
-    //EL THIS.SET STATE DEL DIDMOUNT SIEMPRE RECIBE UN OBJETO CON LOS VALORES A CAMBIAR
-}
+    this.setState(){
+        //EL THIS.SET STATE DEL DIDMOUNT SIEMPRE RECIBE UN OBJETO CON LOS VALORES A CAMBIAR
+    }
 }
 
 
 
 //EXCLUSIVO DE FUNCIONES
-//useEffect si se le pasa una funcion sola sirve como didMount
-React.useEffect(()=>{
+
+//useEffect: sin arreglo de dependecias se ejecuta despues de cada render
+//con arreglo de dependencias vacio se comporta como didmount
+//con arreglo de dependencias se comporta como didupdate
+
+
+//useEffect si se le pasa una funcion sola sirve como didMount (si no tiene un segundo parametro)
+//HAY QUE PASARLE UN ARREGLO DE DEPENDENCIAS VACIO
+React.useEffect(() => {
     //Como no tiene this.state entonces se pasa cada uno por aparte (cuando se crean los componentes se les pone el nombre de la funcion para que modifique el estado)
-setNombre ("")
-})
+    setNombre("")
+}, [])
+
+//LAS FUNCIONES NO TIENEN DIDRENDER ENTONCES LO QUE ESTE ANTES DEL RETURN ES EL RENDER
+
+//Para usarlo como DID UPDATE le pasamos un segundo parametro al useEffect
+//Se le pasa como parametro un arreglo de dependencias
+//entonces, el mae va a decir, cada vez que hay un cambio en ese parametro, ejecute este codigo
+//el mae se ejecuta una primera vez como el did mount, despues solo se ejecuta cuando se actualiza la vara
+
+React.useEffect(() => {
+    console.log("Did update")
+    console.log(nombre)
+}, [nombre])

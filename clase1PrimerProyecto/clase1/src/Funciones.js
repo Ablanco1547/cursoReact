@@ -7,6 +7,23 @@ export default function Funciones() {
 
 
 
+  //Como el use effect se le pasa un arreglo vacio se comporta como did mount
+  React.useEffect(() => {
+    console.log('did mount')
+    setTimeout(() => {
+      setNombre("Juan");
+      setApellido("Perez");
+    }, 3000)
+
+  }, [])
+
+  //EL DID UPDATE
+  React.useEffect(() => {
+    console.log("Did update")
+    console.log(nombre)
+
+  }, [nombre])
+
 
   const handleChange = (event) => {
     setNombre(event.target.value);
@@ -16,6 +33,9 @@ export default function Funciones() {
     setApellido(event.target.value);
   };
 
+
+  //Esto no tiene "Render entonces antes del return es el render
+  console.log("Render")
   return (
     <div>
       <h1>Hola, mi nombre es {nombre}</h1>

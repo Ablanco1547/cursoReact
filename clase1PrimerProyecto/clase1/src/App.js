@@ -6,9 +6,10 @@ import Clases from './Clases';
 function App() {
 
   return <div>
-    <Clases/>
-     <Funciones/>
-     </div>
+    {//<Clases/>
+    }
+    <Funciones />
+  </div>
 
 }
 
