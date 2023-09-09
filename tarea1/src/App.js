@@ -1,5 +1,7 @@
 import { ListaEstudiantes } from "./ListaEstudiantes";
 import { ListaEstudiantesClass } from "./ListaEstudiantesClass";
+import { NewsApi } from "./NewsApi";
+
 const listaEstudiantes = [
   {
     nombre: "José",
@@ -39,6 +41,7 @@ function App() {
 
       <ListaEstudiantes listaEstudiantes={listaEstudiantes} />
       <ListaEstudiantesClass listaEstudiantes={listaEstudiantes} />
+      <NewsApi />
     </div>
   );
 }
