@@ -159,6 +159,11 @@ const holaMundoInternacional = (idioma) => {
 //Crear aplicacion de react
 
 npx create - react - app
+
+//crear aplicacion de react utilizando typescript
+npx create - react - app-- template typescript
+
+
 // iniciar el app de react 
 npm run start
 // instalar todos los paquetes necesarios para el proyecto
@@ -214,3 +219,16 @@ React.useEffect(() => {
     console.log("Did update")
     console.log(nombre)
 }, [nombre])
+//PARA USARLO COMO WILL UNMOUNT
+
+React.useEffect(() => {
+
+    console.log(nombre)
+
+
+    //WILL UNMOUNT SE USA COMO UNA FUNCION DE RETORNO
+    return () => {
+        console.log("will unmount");
+    }
+
+}, [])
