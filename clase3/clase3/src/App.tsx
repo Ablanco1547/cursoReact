@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Funciones from './Funciones';
+import { ListaPublicacionesWrapper } from './components/organisms/ListaPublicacionesWrapper';
+
 
 function App() {
   return (
     <div >
-      <Funciones />
+      <ListaPublicacionesWrapper />
     </div>
   );
 }

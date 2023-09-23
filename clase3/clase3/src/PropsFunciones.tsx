@@ -5,11 +5,12 @@ interface IPropsFuncionesProps {
     apellido: string;
 
 }
+//ASI SE TIPAN LOS ARROW FUNCTIONS 
 
-export const PropsFunciones = ({ apellido }: IPropsFuncionesProps) => {
+export const PropsFunciones: React.FC<IPropsFuncionesProps> = (props) => {
     return (
         <>
-            <p>{apellido}</p>
+            <p>{props.apellido}</p>
         </>
     )
 }
