@@ -161,7 +161,7 @@ const holaMundoInternacional = (idioma) => {
 npx create - react - app
 
 //crear aplicacion de react utilizando typescript
-npx create - react - app-- template typescript
+// npx create-react-app my-app --template typescript
 
 
 // iniciar el app de react 
