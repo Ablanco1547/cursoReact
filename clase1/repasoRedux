@@ -1,0 +1,17 @@
+Pilares de REDUX:
+Store
+Actions
+Reducers
+
+store: 
+Es un objeto que tiene el estado de la aplicacion, basicamente la informacion de la aplicacion, solo puede haber 1 store en toda la aplicacion y debe ser accesible a todos los componentes que existan
+La funcion getstate devuelve el estado del store y el dispatch function dispara una aplicacion
+
+Action: 
+es la unica forma de modificar el estado de la aplicacion, es un objeto que representa una intencion de cambiar el estado
+las acciones son creadas por "Action creators" tienen que tener propiedades que llevan el tipo dea ccion para llevar afuera y el payload para actualizar el store
+los dispatch actions son manejados por los reducers
+
+Reducers:
+Son funciones que que dictan como el estado de la aplicacion cambia en respuesta a las acciones enviadas al store
+aceptan el estado y una accion y retornan un nuevo estado
