@@ -15,3 +15,8 @@ los dispatch actions son manejados por los reducers
 Reducers:
 Son funciones que que dictan como el estado de la aplicacion cambia en respuesta a las acciones enviadas al store
 aceptan el estado y una accion y retornan un nuevo estado
+
+
+Instalar Redux:
+
+npm install redux react-redux redux thunk
