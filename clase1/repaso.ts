@@ -4,7 +4,7 @@
 
 
 export default function repaso() {
-    const [nombre, setNombre] = React.useStatre<string | boolean>("Adrian")
+    const [nombre, setNombre] = React.useState<string | boolean>("Adrian")
 
     return (
         <div>Hola mi nombre es: { nombre } </div>
