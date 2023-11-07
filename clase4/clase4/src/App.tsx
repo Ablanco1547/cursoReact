@@ -6,6 +6,8 @@ import thunk from 'redux-thunk';
 import { todoReducer } from './store/reducers/todo-reducer';
 import { userReducer } from './store/reducers/user-reducer';
 import { ListaTodosFunciones } from './components/molecules/ListaTodosFunciones';
+import { EjemploContextProvider } from './contexts/Ejemplo';
+import { ListaTodosContext } from './components/molecules/ListaTodosContext';
 
 //VERSION VIEJA
 const storeViejo = createStore(combineReducers({ todoReducer, userReducer }), applyMiddleware(thunk));
@@ -31,11 +33,14 @@ const state = {
 
 function App() {
   return (
-    <Provider store={storeViejo}>
-      <div >
-        <ListaTodosFunciones />
-      </div>
-    </Provider>
+
+    <div >
+      <EjemploContextProvider>
+        <ListaTodosContext />
+      </EjemploContextProvider>
+
+      <p>Hola Mundo</p>
+    </div>
   );
 }
 
