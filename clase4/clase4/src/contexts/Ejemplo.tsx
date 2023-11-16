@@ -16,6 +16,12 @@ export interface EjemploContextProps {
     setUsers: React.Dispatch<React.SetStateAction<IUser[]>>
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
 
+    agregarTodo: (title: string) => void;
+
+
+    toggleTodoCompleted: (newValue: boolean, todoId: number) => void;
+
+
 }
 
 //VALORES POR DEFECTO
@@ -26,6 +32,11 @@ const EjemploContext = React.createContext<EjemploContextProps>({
     setTodos: () => { },
     setUsers: () => { },
     setLoading: () => { },
+
+    agregarTodo: () => { },
+
+    toggleTodoCompleted: () => { },
+
 });
 
 
@@ -55,6 +66,35 @@ export const EjemploContextProvider: React.FC<React.PropsWithChildren> = ({ chil
 
     }, [])
 
+    const agregarTodo = React.useCallback((title: string) => {
+
+        const newTodo: ITodo = {
+            id: Math.random(),
+            title,
+            completed: false,
+        };
+
+        const newTodos = [newTodo, ...todos];
+        setTodos(newTodos);
+
+
+    }, [todos]);
+
+    const toggleTodoCompleted = React.useCallback((newValue: boolean, todoId: number) => {
+        const newTodos = todos.map((todo) => {
+            if (todo.id === todoId) {
+                return {
+                    ...todo,
+                    completed: newValue,
+                };
+            }
+            return todo
+        });
+
+        setTodos(newTodos);
+
+    }, [todos])
+
     React.useEffect(() => {
 
         traerTodos();
@@ -64,7 +104,11 @@ export const EjemploContextProvider: React.FC<React.PropsWithChildren> = ({ chil
 
 
 
-    const contextValue = React.useMemo(() => ({ todos, users, setTodos, setUsers, loading, setLoading }), [todos, users, setTodos, setUsers, loading, setLoading]);
+    const contextValue = React.useMemo(
+        () => ({
+            todos, users, setTodos, setUsers, loading, setLoading, agregarTodo, toggleTodoCompleted,
+        }),
+        [todos, users, setTodos, setUsers, loading, setLoading, agregarTodo, toggleTodoCompleted,]);
 
 
 

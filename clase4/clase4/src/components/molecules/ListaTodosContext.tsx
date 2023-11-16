@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEjemploContext } from '../../contexts/Ejemplo'
-import { ITodo } from '../../models/ITodo';
+import { Todo } from './Todo';
 
 export const ListaTodosContext = () => {
-    const { todos, loading, setTodos } = useEjemploContext();
+    const { todos, loading, agregarTodo } = useEjemploContext();
     console.log(todos);
 
 
@@ -11,16 +11,10 @@ export const ListaTodosContext = () => {
 
     const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            const newTodo: ITodo = {
-                id: Math.random(),
-                title: e.currentTarget.value,
-                completed: false
-            }
 
-            const newTodos = [newTodo, ...todos];
-            setTodos(newTodos);
+            agregarTodo(e.currentTarget.value);
 
-            e.currentTarget.value = ""
+            e.currentTarget.value = "";
         }
     }
 
@@ -29,7 +23,7 @@ export const ListaTodosContext = () => {
             <input type="text" onKeyDown={handleEnter} />
             <ul>
                 {todos.map((todo) => {
-                    return <li key={todo.id}>{todo.title}</li>
+                    return <Todo key={todo.id} todo={todo}></Todo>
 
 
 
@@ -37,7 +31,7 @@ export const ListaTodosContext = () => {
 
 
 
-            </ul>
+            </ul >
         </>
     )
 };
