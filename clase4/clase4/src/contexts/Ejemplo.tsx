@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { ITodo } from "../models/ITodo";
 import { IUser } from "../models/IUser";
