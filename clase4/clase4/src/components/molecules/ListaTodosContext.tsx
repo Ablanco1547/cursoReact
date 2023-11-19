@@ -1,3 +1,6 @@
+import React from "react";
+import { useEjemploContext } from "../../contexts/Ejemplo";
+import { ITodo } from "../../models/ITodo";
 import React from 'react'
 import { useEjemploContext } from '../../contexts/Ejemplo'
 import { Todo } from './Todo';
