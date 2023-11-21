@@ -24,3 +24,10 @@ const handlechange = (event: number) => {
 //Para typescript no necesitamos propTypes, se usa un tipo a la expresion de funcion
 //Si se reciben props, no se usan funciones como tal, se usan arrow functions
 //TODOS LOS COMPONENTES TIENEN QUE EMPEZAR CON MAYUSCULA
+
+
+
+
+//Como CREAR UN APP DE NEXT
+
+//npx create-next-app@latest --ts
