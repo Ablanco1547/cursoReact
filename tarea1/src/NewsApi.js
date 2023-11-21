@@ -37,7 +37,7 @@ export const NewsApi = () => {
     return (
         <React.Fragment>
 
-            <h1>Noticias de Argentina</h1>
+            <h1 className='text-9xl text-center bg-yellow-600 py-10	'>Noticias de Argentina</h1>
             <section>
                 {noticias.articles.map((noticia) => (
                     <div key={noticia.title}>

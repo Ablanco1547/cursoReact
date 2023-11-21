@@ -37,7 +37,7 @@ const listaEstudiantes = [
 ]
 function App() {
   return (
-    <div>
+    <div className="bg-gris">
 
       <ListaEstudiantes listaEstudiantes={listaEstudiantes} />
       <ListaEstudiantesClass listaEstudiantes={listaEstudiantes} />

@@ -31,3 +31,17 @@ const handlechange = (event: number) => {
 //Como CREAR UN APP DE NEXT
 
 //npx create-next-app@latest --ts
+
+
+
+
+
+//INSTALAR TAILWIND
+
+// npm install -D tailwindcss
+//npx tailwindcss init
+//en tailwind.config.js  en content le ponemos     "./src/**/*.{js,jsx,ts,tsx}"
+// luego en index.css hacemos import de:
+//-@tailwind base
+//-@tailwind components;
+//-@tailwind utilities

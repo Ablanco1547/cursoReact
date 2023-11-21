@@ -8,9 +8,10 @@ import { userReducer } from './store/reducers/user-reducer';
 import { ListaTodosFunciones } from './components/molecules/ListaTodosFunciones';
 import { EjemploContextProvider } from './contexts/Ejemplo';
 import { ListaTodosContext } from './components/molecules/ListaTodosContext';
+import { createBrowserRouter } from 'react-router-dom';
 
 //VERSION VIEJA
-const storeViejo = createStore(combineReducers({ todoReducer, userReducer }), applyMiddleware(thunk));
+//const storeViejo = createStore(combineReducers({ todoReducer, userReducer }), applyMiddleware(thunk));
 
 
 //VERSION NUEVA STORE
